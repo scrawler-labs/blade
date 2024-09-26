@@ -12,9 +12,12 @@ use eftec\bladeone\BladeOne;
 
 class TemplateEngine extends BladeOne
 {
-    public function __construct($view, $cache)
+    private $asset;
+
+    public function __construct($view, $cache, $asset)
     {
         parent::__construct($view, $cache, BladeOne::MODE_AUTO);
+        $this->asset = $asset;
     }
 
     /**
@@ -50,7 +53,7 @@ class TemplateEngine extends BladeOne
     public function compileCss($file)
     {
         $file = $this->strip($file);
-        return '<link rel="stylesheet" type="text/css" href="'.url('/assets/css/'.$file.'.css').'">';
+        return '<link rel="stylesheet" type="text/css" href="'.url('/'.$this->asset.'//css/'.$file.'.css').'">';
     }
 
     /**
@@ -59,7 +62,7 @@ class TemplateEngine extends BladeOne
     public function compileJs($file)
     {
         $file = $this->strip($file);
-        return '<script src="'.url('/assets/js/'.$file.'.js').'"></script>';
+        return '<script src="'.url('/'.$this->asset.'//js/'.$file.'.js').'"></script>';
     }
 
     /**
@@ -68,7 +71,7 @@ class TemplateEngine extends BladeOne
     protected function compileAsset($file): string
     {
         $file = $this->strip($file);
-        return url('/assets/'.$file);
+        return url('/'.$this->asset.'/'.$file);
     }
 
     /**
