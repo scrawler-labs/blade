@@ -6,7 +6,7 @@ if(!function_exists('template')) {
 
         if(class_exists('Scrawler\App')) {
             if(!\Scrawler\App::engine()->has('template')) {
-                 \Scrawler\App::engine()->set('template', $template);
+                 \Scrawler\App::engine()->register('template', $template);
             }
             return \Scrawler\App::engine()->get('template');  
         }
