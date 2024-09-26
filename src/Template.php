@@ -15,6 +15,6 @@ class Template {
         if(is_null($this->engine)) {
             throw new \Exception('Please register view and cache directory first using registerDir() method');
         }
-        return $this->engine->$name($arguments);
+        return $this->engine->$name(...$arguments);
     }
 }
