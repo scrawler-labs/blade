@@ -8,7 +8,7 @@ if(!function_exists('template')) {
             if(!\Scrawler\App::engine()->has('template')) {
                  \Scrawler\App::engine()->register('template', $template);
             }
-            return \Scrawler\App::engine()->get('template');  
+            return \Scrawler\App::engine()->template();  
         }
         return $template;
 
