@@ -18,7 +18,7 @@
         }
     ],
     "require": {
-        "eftec/bladeone": "^4.13"
+        "eftec/bladeone": "4.13"
     },
     "require-dev": {
         "phpstan/phpstan": "^1.12"
