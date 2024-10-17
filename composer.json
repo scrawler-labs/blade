@@ -1,6 +1,6 @@
 {
     "name": "scrawler/blade",
-    "description": "blade integration for scrawler framework",
+    "description": "Blade integration for scrawler framework",
     "type": "library",
     "license": "MIT",
     "autoload": {
